@@ -1,25 +1,28 @@
 <?php
-//shuffle v0.1
-// creates a secured password with a reverse salt key.
+/**********************************************************
+     _            __  __ _                            _   
+ ___| |__  _   _ / _|/ _| | ___  ___ _ __ _   _ _ __ | |_ 
+/ __| '_ \| | | | |_| |_| |/ _ \/ __| '__| | | | '_ \| __|
+\__ \ | | | |_| |  _|  _| |  __/ (__| |  | |_| | |_) | |_ 
+|___/_| |_|\__,_|_| |_| |_|\___|\___|_|   \__, | .__/ \__|
+  create encrypted passwords by shuffling |___/|_|i3network
+
+  version  0.1.20130429102701
+**********************************************************/
 
 function shufflecrypt($action,$string="",$key_hash=""){
-  global $_shufflecrypt;
-	$_self=array('version'=>'v0.1.20130429');
-	//debug?
-		$d=($_shufflecrypt['debug'] ? 1 : 0);
-	//string decode part 1:
+	global $_shufflecrypt;
+		//debug?
+			$d=($_shufflecrypt['debug'] ? 1 : 0);
+	//setup.
+		$_self=array('version'=>'v0.1.20130429102701');
 		$key_hash=base64_decode($key_hash);
-//do not change.
-$key=<<<KEY
-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`1234567890-=[]\;',./~!@#$%^&*()_+{}|:"<>?
-KEY;
+		//do not change.
+			$key="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`1234567890-=[]\;',./~!@#$%^&*()_+{}|:\"<>?";
+		//END: do not change.
 	if($d){
-		echo "------\n";
-		echo "[".strlen($key_hash)."]".$key_hash."\n";
-		echo "[".strlen($key)."]".$key."\n";
-		echo "------";
+		echo "--\n".strlen($key_hash)."]".$key_hash."\n[".strlen($key)."]".$key."\n--";
 	}
-//END: do not chante.
 	if($action=="ver" || $action=="version"){
 		$o=$_self['version'];
 	}else if($action=="decrypt" || $action=="unshuffle"){
@@ -27,7 +30,6 @@ KEY;
 		$string=base64_decode($string);
 		$len=strlen($string);
 		if($d){echo "LEN:".$len."\n";}
-		
 		for($i=0; $i < $len; $i++){
 			$pos=strpos($key_hash,$string[$i]);
 			if($d){echo $i."[POS: ".$pos.", CHAR:".$string[$i].", REPLACE:".$key[$pos]."]\n";}

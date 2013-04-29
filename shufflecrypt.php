@@ -20,9 +20,7 @@ function shufflecrypt($action,$string="",$key_hash=""){
 		//do not change.
 			$key="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`1234567890-=[]\;',./~!@#$%^&*()_+{}|:\"<>?";
 		//END: do not change.
-	if($d){
-		echo "--\n".strlen($key_hash)."]".$key_hash."\n[".strlen($key)."]".$key."\n--";
-	}
+	if($d){echo "--\n".strlen($key_hash)."]".$key_hash."\n[".strlen($key)."]".$key."\n--";}
 	if($action=="ver" || $action=="version"){
 		$o=$_self['version'];
 	}else if($action=="decrypt" || $action=="unshuffle"){

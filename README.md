@@ -25,3 +25,13 @@ To decrypt, pass the action "decrypt", the encrypted password and your hash...
 
 
 Couldn't be easier!
+
+License
+----------
+At i3network, we like to make simple licenses. The terms for using this function are as follows.
+You're allowed to use it provided...
+*   You leave the header of the file intact.
+*   You send a quick email to team@i3network.net or tweet @i3network to let us know you're using it
+
+Other than that, feel free to fork the project, make it better or provide feedback.
+    

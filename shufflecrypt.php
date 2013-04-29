@@ -7,7 +7,9 @@
 |___/_| |_|\__,_|_| |_| |_|\___|\___|_|   \__, | .__/ \__|
   create encrypted passwords by shuffling |___/|_|i3network
 
-  version  0.1.20130429102701
+  i3network.net   -   team@i3network.net   -   @i3network
+
+  version  0.1.20130429105038
 **********************************************************/
 
 function shufflecrypt($action,$string="",$key_hash=""){
@@ -15,7 +17,7 @@ function shufflecrypt($action,$string="",$key_hash=""){
 		//debug?
 			$d=($_shufflecrypt['debug'] ? 1 : 0);
 	//setup.
-		$_self=array('version'=>'v0.1.20130429102701');
+		$_self=array('version'=>'v0.1.20130429105038');
 		$key_hash=base64_decode($key_hash);
 		//do not change.
 			$key="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`1234567890-=[]\;',./~!@#$%^&*()_+{}|:\"<>?";
